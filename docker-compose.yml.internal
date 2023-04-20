@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  swagger:
+    image: swaggerapi/swagger-ui
+    ports:
+      - "80"
+    networks:
+      - proxsy-network
+    environment:
+      - SWAGGER_JSON=./swagger.json
+      - VIRTUAL_HOST=sw.noko1024.net
+      - LETSENCRYPT_HOST=sw.noko1024.net
+
+
+
