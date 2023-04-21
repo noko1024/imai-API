@@ -13,7 +13,7 @@
             "description": "A list of items",
             "content": {
               "application/json": {
-                "schema": {
+                "szchema": {
                   "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/Item"
