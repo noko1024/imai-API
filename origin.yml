@@ -6,14 +6,16 @@ servers:
   - url: 'https://api.example.com/v1'
 
 tags:
-  - name: "認証系"
-    description: "ユーザーのアカウント制御"
-  - name: "物品系"
-    description: "ユーザーのアカウント制御"
-  - name: "アイテムタグ系"
-    description: "アイテムタグの管理"
-  - name: "貸し出し系"
+  - name: 認証系
+    description: ユーザーのアカウント制御
+  - name: 物品系
+    description: ユーザーのアカウント制御
+  - name: アイテムタグ系
+    description: アイテムタグの管理
+  - name: 貸し出し系
     description: 貸し出されたアイテムに関する制御
+  - name: システム管理系
+    description: システム管理
 
 paths:
   /auth/login:
@@ -312,7 +314,7 @@ paths:
   /admin/permissions:
     get:
       tags: 
-        - AdminControl
+        - システム管理系
       summary: Get a list of permissions
       responses:
         '200':
@@ -327,7 +329,7 @@ paths:
   /admin/users/{userId}/permissions:
     get:
       tags: 
-        - AdminControl
+        - システム管理系
       summary: Check the user's permissions
       parameters:
         - name: userId
@@ -350,7 +352,7 @@ paths:
   /admin/permission-groups:
     post:
       tags: 
-        - AdminControl
+        - システム管理系
       summary: Create a new permission group
       requestBody:
         description: Permission group data
@@ -369,7 +371,7 @@ paths:
   /admin/permission-groups/{groupId}:
     delete:
       tags: 
-        - AdminControl
+        - システム管理系
       summary: Delete a permission group by ID
       parameters:
         - name: groupId
@@ -385,7 +387,7 @@ paths:
   /admin/users/{userId}/permission-groups/{groupId}:
     post:
       tags: 
-        - AdminControl
+        - システム管理系
       summary: Assign a permission group to a user
       parameters:
         - name: userId
